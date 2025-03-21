@@ -2,13 +2,18 @@
 import React from 'react';
 import { Button as ShadcnButton } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { Loader2 } from 'lucide-react';
 
 interface ButtonProps extends React.ComponentProps<typeof ShadcnButton> {
   children: React.ReactNode;
-  variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link' | 'accent';
-  size?: 'default' | 'sm' | 'lg' | 'icon';
+  variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link' | 'accent' | 'success';
+  size?: 'default' | 'sm' | 'lg' | 'icon' | 'xl';
   className?: string;
   isLoading?: boolean;
+  leadingIcon?: React.ReactNode;
+  trailingIcon?: React.ReactNode;
+  fullWidth?: boolean;
+  loadingText?: string;
 }
 
 const Button = ({ 
@@ -17,17 +22,38 @@ const Button = ({
   size = 'default', 
   className, 
   isLoading = false,
+  leadingIcon,
+  trailingIcon,
+  fullWidth = false,
+  loadingText = 'Loading...',
   ...props 
 }: ButtonProps) => {
-  const variantClasses = variant === 'accent' ? 'bg-accent text-accent-foreground hover:bg-accent/90' : '';
+  // Custom variant classes that aren't part of shadcn/ui
+  const variantClasses = {
+    'accent': 'bg-accent text-accent-foreground hover:bg-accent/90',
+    'success': 'bg-green-600 text-white hover:bg-green-700',
+  };
+  
+  // Custom size classes
+  const sizeClasses = {
+    'xl': 'h-14 px-8 text-lg rounded-lg',
+  };
+  
+  const selectedVariantClass = (variant === 'accent' || variant === 'success') 
+    ? variantClasses[variant] 
+    : '';
+    
+  const selectedSizeClass = size === 'xl' ? sizeClasses[size] : '';
   
   return (
     <ShadcnButton
-      variant={variant === 'accent' ? 'default' : variant}
-      size={size}
+      variant={['accent', 'success'].includes(variant) ? 'default' : variant}
+      size={size === 'xl' ? 'default' : size}
       className={cn(
         'transition-all duration-300 font-medium',
-        variantClasses,
+        selectedVariantClass,
+        selectedSizeClass,
+        fullWidth && 'w-full',
         className
       )}
       disabled={isLoading || props.disabled}
@@ -35,14 +61,15 @@ const Button = ({
     >
       {isLoading ? (
         <span className="flex items-center justify-center">
-          <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-          </svg>
-          Loading...
+          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+          {loadingText}
         </span>
       ) : (
-        children
+        <span className="flex items-center justify-center">
+          {leadingIcon && <span className="mr-2">{leadingIcon}</span>}
+          {children}
+          {trailingIcon && <span className="ml-2">{trailingIcon}</span>}
+        </span>
       )}
     </ShadcnButton>
   );

@@ -43,9 +43,34 @@ export interface Event {
   image?: string;
   attendees: string[]; // volunteer ids
   maxAttendees?: number;
+  requirements?: string[];
+  contact?: {
+    name: string;
+    email: string;
+    phone?: string;
+  };
+  status: 'upcoming' | 'ongoing' | 'completed' | 'cancelled';
 }
 
 export type FilterOption = {
   label: string;
   value: string;
 };
+
+export interface EventRegistration {
+  eventId: string;
+  userId: string;
+  registrationDate: string;
+  status: 'confirmed' | 'pending' | 'cancelled';
+  notes?: string;
+}
+
+export interface Review {
+  id: string;
+  userId: string; // reviewer ID
+  targetId: string; // event ID or user ID being reviewed
+  targetType: 'event' | 'volunteer' | 'company';
+  rating: number; // 1-5
+  comment: string;
+  date: string;
+}
