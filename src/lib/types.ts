@@ -19,6 +19,7 @@ export interface Company {
   name: string;
   email: string;
   logo: string;
+  avatar?: string; // Added for compatibility with existing code
   type: 'volunteer' | 'organization';
   description: string;
   location: string;
@@ -26,6 +27,8 @@ export interface Company {
   categories: string[];
   employees: number;
   eventsHosted: string[];
+  industry?: string; // Added for compatibility with existing code
+  mission?: string; // Added for compatibility with existing code
 }
 
 export interface Event {

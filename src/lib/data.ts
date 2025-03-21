@@ -1,4 +1,4 @@
-import { Volunteer, Company, Event } from './types';
+import { Volunteer, Company, Event, FilterOption } from './types';
 
 export const volunteers: Volunteer[] = [
   {
@@ -93,52 +93,64 @@ export const companies: Company[] = [
     name: 'Green Earth Org',
     email: 'info@greenearth.org',
     logo: 'https://images.unsplash.com/photo-1488419008435-5679c7b0713f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-    type: 'company',
+    avatar: 'https://images.unsplash.com/photo-1488419008435-5679c7b0713f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
+    type: 'organization',
+    description: 'To protect and preserve the environment through education and conservation efforts.',
     mission: 'To protect and preserve the environment through education and conservation efforts.',
     location: 'San Francisco, CA',
     website: 'https://www.greenearth.org',
     categories: ['Environment', 'Conservation', 'Sustainability'],
+    employees: 30,
     eventsHosted: ['e1', 'e5'],
-    volunteersNeeded: 30
+    industry: 'Environment'
   },
   {
     id: 'c2',
     name: 'SeniorTech',
     email: 'contact@seniortech.com',
     logo: 'https://images.unsplash.com/photo-1518770660439-464c4c52ef1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-    type: 'company',
+    avatar: 'https://images.unsplash.com/photo-1518770660439-464c4c52ef1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
+    type: 'organization',
+    description: 'Empowering seniors through technology education and support.',
     mission: 'Empowering seniors through technology education and support.',
     location: 'Boston, MA',
     website: 'https://www.seniortech.com',
     categories: ['Education', 'Technology', 'Seniors'],
+    employees: 15,
     eventsHosted: ['e2'],
-    volunteersNeeded: 15
+    industry: 'Education & Technology'
   },
   {
     id: 'c3',
     name: 'Habitat for All',
     email: 'info@habitatforall.org',
     logo: 'https://images.unsplash.com/photo-1513542789411-b6a5d4f3a800?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-    type: 'company',
+    avatar: 'https://images.unsplash.com/photo-1513542789411-b6a5d4f3a800?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
+    type: 'organization',
+    description: 'Building affordable homes and communities for families in need.',
     mission: 'Building affordable homes and communities for families in need.',
     location: 'Houston, TX',
     website: 'https://www.habitatforall.org',
     categories: ['Housing', 'Construction', 'Community Development'],
+    employees: 40,
     eventsHosted: ['e3', 'e4'],
-    volunteersNeeded: 40
+    industry: 'Construction & Housing'
   },
   {
     id: 'c4',
     name: 'HealthFirst',
     email: 'info@healthfirst.org',
     logo: 'https://images.unsplash.com/photo-1532938314630-e96f17bb43e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1980&q=80',
-    type: 'company',
+    avatar: 'https://images.unsplash.com/photo-1532938314630-e96f17bb43e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1980&q=80',
+    type: 'organization',
+    description: 'Improving community health through education, prevention, and access to care.',
     mission: 'Improving community health through education, prevention, and access to care.',
     location: 'Washington, DC',
     website: 'https://www.healthfirst.org',
     categories: ['Healthcare', 'Public Health', 'Community Service'],
+    employees: 20,
     eventsHosted: ['e6'],
-    volunteersNeeded: 20
+    industry: 'Healthcare'
   }
 ];
 
@@ -253,64 +265,78 @@ export const events: Event[] = [
   }
 ];
 
-export const skillOptions = [
-  'Teaching',
-  'Mentoring',
-  'Tutoring',
-  'Web Development',
-  'Graphic Design',
-  'Digital Marketing',
-  'Carpentry',
-  'Construction',
-  'Project Management',
-  'Event Planning',
-  'Fundraising',
-  'Public Relations',
-  'Gardening',
-  'Landscaping',
-  'Environmental Conservation',
-  'Healthcare',
-  'Nursing',
-  'Patient Care'
+export const skillOptions: FilterOption[] = [
+  { value: 'Teaching', label: 'Teaching' },
+  { value: 'Mentoring', label: 'Mentoring' },
+  { value: 'Tutoring', label: 'Tutoring' },
+  { value: 'Web Development', label: 'Web Development' },
+  { value: 'Graphic Design', label: 'Graphic Design' },
+  { value: 'Digital Marketing', label: 'Digital Marketing' },
+  { value: 'Carpentry', label: 'Carpentry' },
+  { value: 'Construction', label: 'Construction' },
+  { value: 'Project Management', label: 'Project Management' },
+  { value: 'Event Planning', label: 'Event Planning' },
+  { value: 'Fundraising', label: 'Fundraising' },
+  { value: 'Public Relations', label: 'Public Relations' },
+  { value: 'Gardening', label: 'Gardening' },
+  { value: 'Landscaping', label: 'Landscaping' },
+  { value: 'Environmental Conservation', label: 'Environmental Conservation' },
+  { value: 'Healthcare', label: 'Healthcare' },
+  { value: 'Nursing', label: 'Nursing' },
+  { value: 'Patient Care', label: 'Patient Care' }
 ];
 
-export const categoryOptions = [
-  'Environment',
-  'Community',
-  'Outdoor',
-  'Education',
-  'Technology',
-  'Seniors',
-  'Construction',
-  'Housing',
-  'Skilled Labor',
-  'Community Development',
-  'Urban Renewal',
-  'Conservation',
-  'Healthcare',
-  'Community Service'
+export const categoryOptions: FilterOption[] = [
+  { value: 'Environment', label: 'Environment' },
+  { value: 'Community', label: 'Community' },
+  { value: 'Outdoor', label: 'Outdoor' },
+  { value: 'Education', label: 'Education' },
+  { value: 'Technology', label: 'Technology' },
+  { value: 'Seniors', label: 'Seniors' },
+  { value: 'Construction', label: 'Construction' },
+  { value: 'Housing', label: 'Housing' },
+  { value: 'Skilled Labor', label: 'Skilled Labor' },
+  { value: 'Community Development', label: 'Community Development' },
+  { value: 'Urban Renewal', label: 'Urban Renewal' },
+  { value: 'Conservation', label: 'Conservation' },
+  { value: 'Healthcare', label: 'Healthcare' },
+  { value: 'Community Service', label: 'Community Service' }
 ];
 
-export const locationOptions = [
-  'New York, NY',
-  'Boston, MA',
-  'Houston, TX',
-  'San Francisco, CA',
-  'Austin, TX',
-  'Washington, DC'
+export const locationOptions: FilterOption[] = [
+  { value: 'New York, NY', label: 'New York, NY' },
+  { value: 'Boston, MA', label: 'Boston, MA' },
+  { value: 'Houston, TX', label: 'Houston, TX' },
+  { value: 'San Francisco, CA', label: 'San Francisco, CA' },
+  { value: 'Austin, TX', label: 'Austin, TX' },
+  { value: 'Washington, DC', label: 'Washington, DC' }
 ];
 
-// Helper function to get a volunteer by ID
 export const getVolunteerById = (id: string) => {
   return volunteers.find(volunteer => volunteer.id === id);
 };
 
-// Helper function to get a company by ID
 export const getCompanyById = (id: string) => {
   return companies.find(company => company.id === id);
 };
 
-// Helper function to get events by category
 export const getEventsByCategory = (category: string) => {
   return events.filter(event => event.categories.includes(category));
+};
+
+export const getEventById = (id: string) => {
+  return events.find(event => event.id === id);
+};
+
+export const getEventAttendees = (eventId: string) => {
+  const event = getEventById(eventId);
+  if (!event) return [];
+  
+  return event.attendees
+    .map(attendeeId => getVolunteerById(attendeeId))
+    .filter(Boolean) as Volunteer[];
+};
+
+export const getEventsByOrganizer = (organizerId: string) => {
+  return events.filter(event => event.organizer === organizerId);
 };

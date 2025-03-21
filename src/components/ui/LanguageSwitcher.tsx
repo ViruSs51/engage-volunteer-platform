@@ -1,45 +1,50 @@
 
 import React from 'react';
-import { Globe } from 'lucide-react';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { Language } from '@/lib/types';
-import { t } from '@/lib/translations';
+import { Button } from '@/components/ui/button';
+import { Check, Globe } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { Language } from '@/lib/types';
 
-const LanguageSwitcher = () => {
+const languageNames: Record<Language, string> = {
+  en: 'English',
+  ru: 'Русский',
+  ro: 'Română'
+};
+
+const flagEmojis: Record<Language, string> = {
+  en: '🇬🇧',
+  ru: '🇷🇺',
+  ro: '🇷🇴'
+};
+
+const LanguageSwitcher: React.FC = () => {
   const { language, setLanguage } = useLanguage();
-
-  const languageOptions: { value: Language; label: string; flag: string }[] = [
-    { value: 'en', label: t('english', language), flag: '🇬🇧' },
-    { value: 'ru', label: t('russian', language), flag: '🇷🇺' },
-    { value: 'ro', label: t('romanian', language), flag: '🇷🇴' },
-  ];
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon" className="gap-2">
+        <Button variant="ghost" size="icon" className="h-9 w-9 rounded-full">
           <Globe className="h-4 w-4" />
-          <span className="sr-only md:not-sr-only md:inline-block">
-            {languageOptions.find(option => option.value === language)?.flag}
-          </span>
+          <span className="sr-only">Toggle language</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        {languageOptions.map((option) => (
+        {Object.entries(languageNames).map(([code, name]) => (
           <DropdownMenuItem
-            key={option.value}
-            onClick={() => setLanguage(option.value)}
-            className={`flex items-center gap-2 ${language === option.value ? 'font-medium bg-accent/50' : ''}`}
+            key={code}
+            onClick={() => setLanguage(code as Language)}
+            className="flex items-center justify-between px-3 py-2 cursor-pointer"
           >
-            <span>{option.flag}</span>
-            <span>{option.label}</span>
+            <span>
+              {flagEmojis[code as Language]} {name}
+            </span>
+            {language === code && <Check className="h-4 w-4 ml-2" />}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
