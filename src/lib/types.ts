@@ -1,30 +1,30 @@
-
-export interface User {
+export interface Volunteer {
   id: string;
   name: string;
   email: string;
-  avatar?: string;
-  type: 'volunteer' | 'company';
-}
-
-export interface Volunteer extends User {
-  type: 'volunteer';
+  avatar: string;
+  type: 'volunteer' | 'organization';
   skills: string[];
   bio: string;
   location: string;
   availability: string[];
   interests: string[];
-  experience: number; // years
-  eventsAttended: string[]; // event ids
+  experience: number;
+  eventsAttended: string[];
 }
 
-export interface Company extends User {
-  type: 'company';
+export interface Company {
+  id: string;
+  name: string;
+  email: string;
+  logo: string;
+  type: 'volunteer' | 'organization';
   description: string;
-  industry: string;
   location: string;
   website: string;
-  eventsHosted: string[]; // event ids
+  categories: string[];
+  employees: number;
+  eventsHosted: string[];
 }
 
 export interface Event {
@@ -36,41 +36,12 @@ export interface Event {
   location: {
     address: string;
     city: string;
-    coordinates: [number, number]; // [longitude, latitude]
+    coordinates: [number, number];
   };
-  organizer: string; // company id
+  organizer: string;
   categories: string[];
-  image?: string;
-  attendees: string[]; // volunteer ids
-  maxAttendees?: number;
-  requirements?: string[];
-  contact?: {
-    name: string;
-    email: string;
-    phone?: string;
-  };
-  status: 'upcoming' | 'ongoing' | 'completed' | 'cancelled';
-}
-
-export type FilterOption = {
-  label: string;
-  value: string;
-};
-
-export interface EventRegistration {
-  eventId: string;
-  userId: string;
-  registrationDate: string;
-  status: 'confirmed' | 'pending' | 'cancelled';
-  notes?: string;
-}
-
-export interface Review {
-  id: string;
-  userId: string; // reviewer ID
-  targetId: string; // event ID or user ID being reviewed
-  targetType: 'event' | 'volunteer' | 'company';
-  rating: number; // 1-5
-  comment: string;
-  date: string;
+  image: string;
+  attendees: string[];
+  maxAttendees: number;
+  status: 'upcoming' | 'ongoing' | 'completed' | 'canceled';
 }

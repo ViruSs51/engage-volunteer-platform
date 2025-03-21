@@ -3,30 +3,30 @@ import { Volunteer, Company, Event } from './types';
 export const volunteers: Volunteer[] = [
   {
     id: 'v1',
-    name: 'Alex Johnson',
-    email: 'alex@example.com',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+    name: 'Alice Johnson',
+    email: 'alice@example.com',
+    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b8d21c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
     type: 'volunteer',
-    skills: ['Programming', 'Graphic Design', 'Event Planning'],
-    bio: 'Passionate about using technology to create positive social impact. I have 5 years of experience in web development and enjoy mentoring others.',
-    location: 'San Francisco, CA',
-    availability: ['Weekends', 'Evenings'],
-    interests: ['Education', 'Environment', 'Technology'],
-    experience: 5,
+    skills: ['Teaching', 'Mentoring', 'Tutoring'],
+    bio: 'Passionate educator with 10+ years of experience. I love helping students achieve their full potential.',
+    location: 'New York, NY',
+    availability: ['Weekdays', 'Weekends'],
+    interests: ['Education', 'Youth Development', 'Community Outreach'],
+    experience: 12,
     eventsAttended: ['e1', 'e3']
   },
   {
     id: 'v2',
-    name: 'Maya Patel',
-    email: 'maya@example.com',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+    name: 'Bob Williams',
+    email: 'bob@example.com',
+    avatar: 'https://images.unsplash.com/photo-1534528741702-a0cfae57f6ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80',
     type: 'volunteer',
-    skills: ['Teaching', 'Language Translation', 'First Aid'],
-    bio: 'Former educator with a passion for helping immigrant communities. I speak 4 languages and love connecting people across cultures.',
-    location: 'Chicago, IL',
-    availability: ['Weekdays', 'Mornings'],
-    interests: ['Immigration', 'Education', 'Health'],
-    experience: 8,
+    skills: ['Web Development', 'Graphic Design', 'Digital Marketing'],
+    bio: 'Creative professional skilled in web development and digital marketing. I enjoy using my skills to support nonprofits.',
+    location: 'Boston, MA',
+    availability: ['Weekends', 'Evenings'],
+    interests: ['Technology', 'Nonprofits', 'Social Impact'],
+    experience: 5,
     eventsAttended: ['e2']
   },
   {
@@ -45,44 +45,44 @@ export const volunteers: Volunteer[] = [
   },
   {
     id: 'v4',
-    name: 'Sophia Kim',
-    email: 'sophia@example.com',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80',
+    name: 'Diana Lee',
+    email: 'diana@example.com',
+    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80',
     type: 'volunteer',
-    skills: ['Marketing', 'Social Media', 'Event Planning'],
-    bio: 'Digital marketing specialist with a knack for storytelling. I help nonprofits amplify their message and reach new audiences.',
-    location: 'New York, NY',
-    availability: ['Weekends', 'Remote'],
-    interests: ['Arts', 'Youth Programs', 'Animal Welfare'],
-    experience: 7,
-    eventsAttended: ['e5', 'e1']
+    skills: ['Event Planning', 'Fundraising', 'Public Relations'],
+    bio: 'Experienced event planner and fundraiser. I\'m passionate about supporting causes that make a difference.',
+    location: 'San Francisco, CA',
+    availability: ['Weekends', 'Part-time'],
+    interests: ['Arts & Culture', 'Environment', 'Social Justice'],
+    experience: 8,
+    eventsAttended: ['e1', 'e5']
   },
   {
     id: 'v5',
-    name: 'David Wilson',
-    email: 'david@example.com',
-    avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+    name: 'Ethan Green',
+    email: 'ethan@example.com',
+    avatar: 'https://images.unsplash.com/photo-1544005313-943cb025c0e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80',
     type: 'volunteer',
-    skills: ['Cooking', 'Food Safety', 'Nutrition'],
-    bio: 'Trained chef dedicated to fighting food insecurity. I organize community kitchens and teach cooking classes to low-income families.',
-    location: 'Seattle, WA',
-    availability: ['Evenings', 'Weekends'],
-    interests: ['Food Security', 'Nutrition Education', 'Community Building'],
-    experience: 12,
+    skills: ['Gardening', 'Landscaping', 'Environmental Conservation'],
+    bio: 'Avid gardener and environmentalist. I enjoy working outdoors and promoting sustainable practices.',
+    location: 'Austin, TX',
+    availability: ['Weekdays', 'Part-time'],
+    interests: ['Environment', 'Sustainability', 'Community Gardening'],
+    experience: 3,
     eventsAttended: ['e3']
   },
   {
     id: 'v6',
-    name: 'Aisha Hassan',
-    email: 'aisha@example.com',
-    avatar: 'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+    name: 'Fiona White',
+    email: 'fiona@example.com',
+    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
     type: 'volunteer',
-    skills: ['Nursing', 'Medical Assistance', 'Health Education'],
-    bio: 'Registered nurse passionate about providing healthcare access to underserved communities. I volunteer at free clinics and health fairs.',
-    location: 'Atlanta, GA',
-    availability: ['Weekends', 'Some Weekdays'],
-    interests: ['Healthcare Access', 'Public Health', 'Medical Outreach'],
-    experience: 15,
+    skills: ['Healthcare', 'Nursing', 'Patient Care'],
+    bio: 'Registered nurse with a passion for helping others. I volunteer at local clinics and hospitals.',
+    location: 'Washington, DC',
+    availability: ['Weekends', 'Full-time'],
+    interests: ['Healthcare', 'Public Health', 'Community Service'],
+    experience: 7,
     eventsAttended: ['e2', 'e5']
   }
 ];
@@ -90,51 +90,55 @@ export const volunteers: Volunteer[] = [
 export const companies: Company[] = [
   {
     id: 'c1',
-    name: 'GreenEarth Foundation',
-    email: 'contact@greenearth.org',
-    avatar: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+    name: 'Green Earth Org',
+    email: 'info@greenearth.org',
+    logo: 'https://images.unsplash.com/photo-1488419008435-5679c7b0713f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
     type: 'company',
-    description: 'Nonprofit focused on environmental conservation and sustainable practices. We organize clean-ups, tree planting events, and environmental education.',
-    industry: 'Environmental Conservation',
+    mission: 'To protect and preserve the environment through education and conservation efforts.',
     location: 'San Francisco, CA',
-    website: 'www.greenearth.org',
-    eventsHosted: ['e1', 'e5']
+    website: 'https://www.greenearth.org',
+    categories: ['Environment', 'Conservation', 'Sustainability'],
+    eventsHosted: ['e1', 'e5'],
+    volunteersNeeded: 30
   },
   {
     id: 'c2',
-    name: 'TechForGood',
-    email: 'info@techforgood.com',
-    avatar: 'https://images.unsplash.com/photo-1596720426673-e4e14290f0cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+    name: 'SeniorTech',
+    email: 'contact@seniortech.com',
+    logo: 'https://images.unsplash.com/photo-1518770660439-464c4c52ef1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
     type: 'company',
-    description: 'Social enterprise connecting tech volunteers with nonprofits. We believe in using technology to solve social challenges.',
-    industry: 'Technology',
+    mission: 'Empowering seniors through technology education and support.',
     location: 'Boston, MA',
-    website: 'www.techforgood.com',
-    eventsHosted: ['e2']
+    website: 'https://www.seniortech.com',
+    categories: ['Education', 'Technology', 'Seniors'],
+    eventsHosted: ['e2'],
+    volunteersNeeded: 15
   },
   {
     id: 'c3',
-    name: 'HomeBuilders Alliance',
-    email: 'contact@homebuildersalliance.org',
-    avatar: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
+    name: 'Habitat for All',
+    email: 'info@habitatforall.org',
+    logo: 'https://images.unsplash.com/photo-1513542789411-b6a5d4f3a800?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
     type: 'company',
-    description: 'Nonprofit dedicated to building affordable housing for families in need. We work with volunteers to construct and renovate homes across the country.',
-    industry: 'Housing & Construction',
-    location: 'Austin, TX',
-    website: 'www.homebuildersalliance.org',
-    eventsHosted: ['e3', 'e4']
+    mission: 'Building affordable homes and communities for families in need.',
+    location: 'Houston, TX',
+    website: 'https://www.habitatforall.org',
+    categories: ['Housing', 'Construction', 'Community Development'],
+    eventsHosted: ['e3', 'e4'],
+    volunteersNeeded: 40
   },
   {
     id: 'c4',
-    name: 'Global Health Initiative',
-    email: 'info@globalhealth.org',
-    avatar: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80',
+    name: 'HealthFirst',
+    email: 'info@healthfirst.org',
+    logo: 'https://images.unsplash.com/photo-1532938314630-e96f17bb43e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1980&q=80',
     type: 'company',
-    description: 'International organization improving healthcare access in underserved regions. We organize medical missions, health education programs, and clinic setups.',
-    industry: 'Healthcare',
+    mission: 'Improving community health through education, prevention, and access to care.',
     location: 'Washington, DC',
-    website: 'www.globalhealth.org',
-    eventsHosted: ['e6']
+    website: 'https://www.healthfirst.org',
+    categories: ['Healthcare', 'Public Health', 'Community Service'],
+    eventsHosted: ['e6'],
+    volunteersNeeded: 20
   }
 ];
 
@@ -154,7 +158,8 @@ export const events: Event[] = [
     categories: ['Environment', 'Community', 'Outdoor'],
     image: 'https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
     attendees: ['v1', 'v4'],
-    maxAttendees: 50
+    maxAttendees: 50,
+    status: 'upcoming'
   },
   {
     id: 'e2',
@@ -171,7 +176,8 @@ export const events: Event[] = [
     categories: ['Education', 'Technology', 'Seniors'],
     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=776&q=80',
     attendees: ['v2', 'v6'],
-    maxAttendees: 20
+    maxAttendees: 20,
+    status: 'upcoming'
   },
   {
     id: 'e3',
@@ -188,7 +194,8 @@ export const events: Event[] = [
     categories: ['Construction', 'Housing', 'Skilled Labor'],
     image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
     attendees: ['v1', 'v5'],
-    maxAttendees: 30
+    maxAttendees: 30,
+    status: 'upcoming'
   },
   {
     id: 'e4',
@@ -205,7 +212,8 @@ export const events: Event[] = [
     categories: ['Community Development', 'Construction', 'Urban Renewal'],
     image: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
     attendees: ['v3'],
-    maxAttendees: 40
+    maxAttendees: 40,
+    status: 'ongoing'
   },
   {
     id: 'e5',
@@ -222,7 +230,8 @@ export const events: Event[] = [
     categories: ['Environment', 'Outdoor', 'Conservation'],
     image: 'https://images.unsplash.com/photo-1618477461853-cf6ed80faba5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
     attendees: ['v4', 'v6'],
-    maxAttendees: 75
+    maxAttendees: 75,
+    status: 'upcoming'
   },
   {
     id: 'e6',
@@ -239,79 +248,69 @@ export const events: Event[] = [
     categories: ['Healthcare', 'Community Service', 'Education'],
     image: 'https://images.unsplash.com/photo-1631815588090-d1bcbe9b4b01?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80',
     attendees: [],
-    maxAttendees: 25
+    maxAttendees: 25,
+    status: 'upcoming'
   }
 ];
 
 export const skillOptions = [
-  { label: 'Programming', value: 'programming' },
-  { label: 'Graphic Design', value: 'graphic-design' },
-  { label: 'Teaching', value: 'teaching' },
-  { label: 'Marketing', value: 'marketing' },
-  { label: 'Construction', value: 'construction' },
-  { label: 'Cooking', value: 'cooking' },
-  { label: 'Medical', value: 'medical' },
-  { label: 'Translation', value: 'translation' },
-  { label: 'Event Planning', value: 'event-planning' },
-  { label: 'Social Media', value: 'social-media' },
+  'Teaching',
+  'Mentoring',
+  'Tutoring',
+  'Web Development',
+  'Graphic Design',
+  'Digital Marketing',
+  'Carpentry',
+  'Construction',
+  'Project Management',
+  'Event Planning',
+  'Fundraising',
+  'Public Relations',
+  'Gardening',
+  'Landscaping',
+  'Environmental Conservation',
+  'Healthcare',
+  'Nursing',
+  'Patient Care'
 ];
 
 export const categoryOptions = [
-  { label: 'Environment', value: 'environment' },
-  { label: 'Education', value: 'education' },
-  { label: 'Technology', value: 'technology' },
-  { label: 'Healthcare', value: 'healthcare' },
-  { label: 'Community', value: 'community' },
-  { label: 'Construction', value: 'construction' },
-  { label: 'Animal Welfare', value: 'animal-welfare' },
-  { label: 'Arts & Culture', value: 'arts-culture' },
-  { label: 'Disaster Relief', value: 'disaster-relief' },
-  { label: 'Youth Programs', value: 'youth-programs' },
+  'Environment',
+  'Community',
+  'Outdoor',
+  'Education',
+  'Technology',
+  'Seniors',
+  'Construction',
+  'Housing',
+  'Skilled Labor',
+  'Community Development',
+  'Urban Renewal',
+  'Conservation',
+  'Healthcare',
+  'Community Service'
 ];
 
 export const locationOptions = [
-  { label: 'San Francisco, CA', value: 'san-francisco' },
-  { label: 'New York, NY', value: 'new-york' },
-  { label: 'Boston, MA', value: 'boston' },
-  { label: 'Austin, TX', value: 'austin' },
-  { label: 'Chicago, IL', value: 'chicago' },
-  { label: 'Seattle, WA', value: 'seattle' },
-  { label: 'Atlanta, GA', value: 'atlanta' },
-  { label: 'Houston, TX', value: 'houston' },
-  { label: 'Washington, DC', value: 'washington' },
-  { label: 'Los Angeles, CA', value: 'los-angeles' },
+  'New York, NY',
+  'Boston, MA',
+  'Houston, TX',
+  'San Francisco, CA',
+  'Austin, TX',
+  'Washington, DC'
 ];
 
-export function getVolunteerById(id: string): Volunteer | undefined {
+// Helper function to get a volunteer by ID
+export const getVolunteerById = (id: string) => {
   return volunteers.find(volunteer => volunteer.id === id);
-}
+};
 
-export function getCompanyById(id: string): Company | undefined {
+// Helper function to get a company by ID
+export const getCompanyById = (id: string) => {
   return companies.find(company => company.id === id);
-}
+};
 
-export function getEventById(id: string): Event | undefined {
-  return events.find(event => event.id === id);
-}
-
-export function getEventsByCategory(category: string): Event[] {
+// Helper function to get events by category
+export const getEventsByCategory = (category: string) => {
   return events.filter(event => event.categories.includes(category));
-}
-
-export function getEventsByOrganizer(organizerId: string): Event[] {
-  return events.filter(event => event.organizer === organizerId);
-}
-
-export function getVolunteersBySkill(skill: string): Volunteer[] {
-  return volunteers.filter(volunteer => volunteer.skills.includes(skill));
-}
-
-export function getVolunteersByLocation(location: string): Volunteer[] {
-  return volunteers.filter(volunteer => volunteer.location.includes(location));
-}
-
-export function getEventAttendees(eventId: string): Volunteer[] {
-  const event = getEventById(eventId);
-  if (!event) return [];
-  return volunteers.filter(volunteer => event.attendees.includes(volunteer.id));
-}
+};

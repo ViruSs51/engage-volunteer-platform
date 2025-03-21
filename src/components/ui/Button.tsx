@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Button as ShadcnButton, buttonVariants } from '@/components/ui/button';
+import { default as ShadcnButton, buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 
@@ -14,6 +14,9 @@ interface ButtonProps extends React.ComponentProps<typeof ShadcnButton> {
   trailingIcon?: React.ReactNode;
   fullWidth?: boolean;
   loadingText?: string;
+  onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
 }
 
 const Button = ({ 
@@ -26,6 +29,9 @@ const Button = ({
   trailingIcon,
   fullWidth = false,
   loadingText = 'Loading...',
+  onClick,
+  type,
+  disabled,
   ...props 
 }: ButtonProps) => {
   // Custom variant classes that aren't part of shadcn/ui
@@ -56,7 +62,9 @@ const Button = ({
         fullWidth && 'w-full',
         className
       )}
-      disabled={isLoading || props.disabled}
+      disabled={isLoading || disabled}
+      onClick={onClick}
+      type={type}
       {...props}
     >
       {isLoading ? (
