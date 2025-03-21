@@ -8,8 +8,12 @@ import Footer from '@/components/layout/Footer';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from '@/components/ui/Button';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { t } from '@/lib/translations';
 
 const Index = () => {
+  const { language } = useLanguage();
+  
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -26,9 +30,9 @@ const Index = () => {
         {/* Call to action section */}
         <section className="py-24 bg-primary text-primary-foreground">
           <div className="container-narrow text-center">
-            <h2 className="text-4xl font-bold mb-4">Ready to Make a Difference?</h2>
+            <h2 className="text-4xl font-bold mb-4">{t('readyToMakeADifference', language)}</h2>
             <p className="text-xl mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
-              Whether you're looking to volunteer your skills or find capable volunteers for your cause, we're here to help you connect and create impact.
+              {t('ctaSubtitle', language)}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/auth?type=signup">
@@ -37,7 +41,7 @@ const Index = () => {
                   size="lg"
                   className="w-full sm:w-auto"
                 >
-                  Join as a Volunteer
+                  {t('joinAsVolunteer', language)}
                 </Button>
               </Link>
               <Link to="/auth?type=signup&company=true">
@@ -46,7 +50,7 @@ const Index = () => {
                   size="lg"
                   className="w-full sm:w-auto border-white/20 bg-white/10 hover:bg-white/20"
                 >
-                  Register as an Organization
+                  {t('registerAsOrganization', language)}
                 </Button>
               </Link>
             </div>
@@ -57,9 +61,9 @@ const Index = () => {
         <section className="section-padding bg-muted/30">
           <div className="container-wide">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4">What People Say</h2>
+              <h2 className="text-4xl font-bold mb-4">{t('whatPeopleSay', language)}</h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Hear from volunteers and organizations who have used our platform to create impact.
+                {t('hearFromVolunteers', language)}
               </p>
             </div>
             
@@ -139,7 +143,7 @@ const Index = () => {
             
             <div className="text-center mt-12">
               <Link to="/volunteer-search" className="inline-flex items-center text-primary hover:underline">
-                <span>Read more volunteer stories</span>
+                <span>{t('readMoreStories', language)}</span>
                 <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </div>

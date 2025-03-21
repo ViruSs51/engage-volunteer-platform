@@ -3,9 +3,12 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Button from '@/components/ui/Button';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { t } from '@/lib/translations';
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const { language } = useLanguage();
 
   useEffect(() => {
     if (!heroRef.current) return;
@@ -56,26 +59,28 @@ const Hero = () => {
       <div className="container-narrow relative z-10">
         <div className="text-center space-y-6 animate-fade-in-up">
           <div className="inline-block bg-muted px-3 py-1 rounded-full text-sm font-medium text-muted-foreground mb-4">
-            Making a difference, one volunteer at a time
+            {t('heroTagline', language)}
           </div>
           
           <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-            Connecting <span className="text-primary">Passionate People</span> with Meaningful Causes
+            {t('heroTitle', language).split('Passionate People').map((part, i) => 
+              i === 0 ? part : <><span className="text-primary">Passionate People</span>{part}</>
+            )}
           </h1>
           
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Join our community of volunteers and organizations working together to create positive change. Find opportunities that match your skills and interests.
+            {t('heroSubtitle', language)}
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
             <Link to="/volunteer-search">
               <Button size="lg" className="w-full sm:w-auto">
-                Find Volunteers
+                {t('findVolunteers', language)}
               </Button>
             </Link>
             <Link to="/events-volunteers">
               <Button variant="outline" size="lg" className="w-full sm:w-auto group">
-                <span>Explore Events</span>
+                <span>{t('exploreEvents', language)}</span>
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
@@ -84,19 +89,19 @@ const Hero = () => {
           <div className="pt-12 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="text-3xl font-bold text-primary">2,500+</div>
-              <div className="text-muted-foreground">Active Volunteers</div>
+              <div className="text-muted-foreground">{t('activeVolunteers', language)}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-primary">150+</div>
-              <div className="text-muted-foreground">Partner Organizations</div>
+              <div className="text-muted-foreground">{t('partnerOrganizations', language)}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-primary">500+</div>
-              <div className="text-muted-foreground">Events Completed</div>
+              <div className="text-muted-foreground">{t('eventsCompleted', language)}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-primary">15,000+</div>
-              <div className="text-muted-foreground">Volunteer Hours</div>
+              <div className="text-muted-foreground">{t('volunteerHours', language)}</div>
             </div>
           </div>
         </div>

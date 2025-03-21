@@ -1,10 +1,10 @@
 
 import React from 'react';
-import { default as ShadcnButton, buttonVariants } from '@/components/ui/button';
+import { Button as ShadcnButton, buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 
-interface ButtonProps extends React.ComponentProps<typeof ShadcnButton> {
+interface ButtonProps extends Omit<React.ComponentProps<typeof ShadcnButton>, 'variant'> {
   children: React.ReactNode;
   variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link' | 'accent' | 'success';
   size?: 'default' | 'sm' | 'lg' | 'icon' | 'xl';
@@ -51,10 +51,18 @@ const Button = ({
     
   const selectedSizeClass = size === 'xl' ? sizeClasses[size] : '';
   
+  // Map custom variants to supported shadcn variants
+  const shadcnVariant = (['accent', 'success'].includes(variant) ? 'default' : variant) as 
+    'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
+  
+  // Map custom sizes to supported shadcn sizes
+  const shadcnSize = (size === 'xl' ? 'default' : size) as 
+    'default' | 'sm' | 'lg' | 'icon';
+  
   return (
     <ShadcnButton
-      variant={['accent', 'success'].includes(variant) ? 'default' : variant}
-      size={size === 'xl' ? 'default' : size}
+      variant={shadcnVariant}
+      size={shadcnSize}
       className={cn(
         'transition-all duration-300 font-medium',
         selectedVariantClass,

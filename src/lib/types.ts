@@ -1,3 +1,4 @@
+
 export interface Volunteer {
   id: string;
   name: string;
@@ -44,4 +45,11 @@ export interface Event {
   attendees: string[];
   maxAttendees: number;
   status: 'upcoming' | 'ongoing' | 'completed' | 'canceled';
+}
+
+export type Language = 'en' | 'ru' | 'ro';
+
+export interface FilterOption {
+  value: string;
+  label: string;
 }

@@ -4,19 +4,23 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, User, LogIn, Search, Calendar, MapPin } from 'lucide-react';
 import Button from '@/components/ui/Button';
 import { useIsMobile } from '@/hooks/use-mobile';
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { t } from '@/lib/translations';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isMobile = useIsMobile();
+  const { language } = useLanguage();
 
   const navItems = [
-    { label: 'Home', path: '/' },
-    { label: 'Volunteers', path: '/volunteer-search', icon: <Search className="h-4 w-4" /> },
-    { label: 'Events', path: '/events-volunteers', icon: <Calendar className="h-4 w-4" /> },
-    { label: 'Event Map', path: '/event-map', icon: <MapPin className="h-4 w-4" /> },
-    { label: 'Contact', path: '/contact' },
+    { label: t('home', language), path: '/' },
+    { label: t('volunteers', language), path: '/volunteer-search', icon: <Search className="h-4 w-4" /> },
+    { label: t('events', language), path: '/events-volunteers', icon: <Calendar className="h-4 w-4" /> },
+    { label: t('eventMap', language), path: '/event-map', icon: <MapPin className="h-4 w-4" /> },
+    { label: t('contact', language), path: '/contact' },
   ];
 
   useEffect(() => {
@@ -66,34 +70,38 @@ const Navbar = () => {
           ))}
         </nav>
 
-        {/* Auth Buttons */}
+        {/* Auth Buttons and Language Switcher */}
         <div className="hidden md:flex items-center space-x-4">
+          <LanguageSwitcher />
           <Link to="/auth?type=login">
             <Button variant="outline" size="sm" className="flex items-center space-x-1">
               <LogIn className="h-4 w-4" />
-              <span>Login</span>
+              <span>{t('login', language)}</span>
             </Button>
           </Link>
           <Link to="/auth?type=signup">
             <Button size="sm" className="flex items-center space-x-1">
               <User className="h-4 w-4" />
-              <span>Sign Up</span>
+              <span>{t('signUp', language)}</span>
             </Button>
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden p-2 focus:outline-none"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? (
-            <X className="h-6 w-6 text-foreground" />
-          ) : (
-            <Menu className="h-6 w-6 text-foreground" />
-          )}
-        </button>
+        {/* Mobile Menu Button and Language Switcher */}
+        <div className="md:hidden flex items-center space-x-2">
+          <LanguageSwitcher />
+          <button
+            className="p-2 focus:outline-none"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6 text-foreground" />
+            ) : (
+              <Menu className="h-6 w-6 text-foreground" />
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
@@ -118,13 +126,13 @@ const Navbar = () => {
               <Link to="/auth?type=login" className="w-full">
                 <Button variant="outline" className="w-full flex items-center justify-center space-x-2">
                   <LogIn className="h-4 w-4" />
-                  <span>Login</span>
+                  <span>{t('login', language)}</span>
                 </Button>
               </Link>
               <Link to="/auth?type=signup" className="w-full">
                 <Button className="w-full flex items-center justify-center space-x-2">
                   <User className="h-4 w-4" />
-                  <span>Sign Up</span>
+                  <span>{t('signUp', language)}</span>
                 </Button>
               </Link>
             </div>
