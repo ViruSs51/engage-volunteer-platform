@@ -1,4 +1,3 @@
-
 import { Volunteer, Company, Event } from './types';
 
 export const volunteers: Volunteer[] = [
@@ -37,7 +36,7 @@ export const volunteers: Volunteer[] = [
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
     type: 'volunteer',
     skills: ['Carpentry', 'Construction', 'Project Management'],
-    bio: 'Retired contractor who enjoys building homes for families in need. I've worked on over 50 projects across the country.',
+    bio: 'Retired contractor who enjoys building homes for families in need. I\'ve worked on over 50 projects across the country.',
     location: 'Houston, TX',
     availability: ['Weekdays', 'Full-time'],
     interests: ['Housing', 'Disaster Relief', 'Community Development'],
@@ -143,7 +142,7 @@ export const events: Event[] = [
   {
     id: 'e1',
     title: 'City Park Clean-Up',
-    description: 'Join us for a day of cleaning and beautifying Central Park. We'll provide gloves, bags, and refreshments. Great for families and individuals!',
+    description: 'Join us for a day of cleaning and beautifying Central Park. We\'ll provide gloves, bags, and refreshments. Great for families and individuals!',
     date: '2023-10-15',
     time: '9:00 AM - 1:00 PM',
     location: {
